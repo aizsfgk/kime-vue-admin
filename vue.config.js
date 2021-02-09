@@ -39,5 +39,11 @@ module.exports = {
         '@': resolve('src')
       }
     }
+  },
+  chainWebpack (config) {
+    // 处理一些配置逻辑
+    // set svg-sprite-loader
+    // 先不做，会怎么样???
   }
+
 }

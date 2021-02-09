@@ -15,6 +15,8 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
+import '@/icons'
+
 console.log(process.env)
 
 // 使用ElementUI组件库

@@ -94,8 +94,15 @@ export default {
   .avatar-container {
     margin-right: 30px;
     .avatar-wrapper {
-        cursor: pointer;
-        position: relative;
+      height: 100%;
+      line-height: 50px;
+      padding: 0 15px;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+          background: rgba(0, 0, 0, .025)
+      }
     }
   }
 }

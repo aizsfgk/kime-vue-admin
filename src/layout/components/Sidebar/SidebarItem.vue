@@ -6,7 +6,8 @@
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)">
           <!-- 4. item -->
-          <item :title="onlyOneChild.meta.title" />
+          <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)"
+          :title="onlyOneChild.meta.title" />
         </el-menu-item>
       </app-link>
     </template>
@@ -16,7 +17,7 @@
     <!-- popper-append-to-body是否将弹出菜单插入至 body 元素。在菜单的定位出现问题时，可尝试修改该属性 -->
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
-        <item v-if="item.meta" :title="item.meta.title"/>
+        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title"/>
       </template>
 
       <sidebar-item
