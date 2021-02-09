@@ -23,15 +23,21 @@ export const constantRoutes = [
   {
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/example/table1',
     name: 'Example',
     meta: { title: '例子', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
+        path: 'table1',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'icon' }
+        meta: { title: '表格1', icon: 'icon' }
+      },
+      {
+        path: 'table2',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '表格2', icon: 'icon' }
       }
     ]
   },

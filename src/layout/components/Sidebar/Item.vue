@@ -5,15 +5,15 @@ export default {
   props: {
     title: { // 标题
       type: String,
-      default: '242423423'
+      default: ''
     }
   },
   render (h, context) {
     const { title } = context.props
     const vnodes = []
-    // if (title) {
+    if (title) {
       vnodes.push(<span slot="title">{(title)}</span>)
-    // }
+    }
     return vnodes
   }
 }

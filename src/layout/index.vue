@@ -1,35 +1,46 @@
 <template>
   <!-- <siderbar class="sidebar-container" /> -->
   <div :class="classObj" class="app-wrapper">
+    <!-- 侧边栏容器 -->
     <sidebar class="sidebar-container" />
+    <!-- 主界面 -->
     <div class="main-container">
+      <div :class="{'fixed-header':fixedHeader}">
+        <navbar />
+      </div>
       <app-main />
     </div>
   </div>
 </template>
 
 <script>
-import { AppMain, Sidebar } from './components'
+import { AppMain, Sidebar, Navbar } from './components'
 
 export default {
   name: 'Layout',
   components: {
     AppMain,
-    Sidebar
+    Sidebar,
+    Navbar
   },
   computed: {
-    sidebar() {
+    sidebar () {
       return this.$store.state.app.sidebar
     },
-    classObj() {
+    classObj () {
       return {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened
       }
+    },
+    fixedHeader () {
+      return this.$store.state.settings.fixedHeader
     }
   },
   methods: {
-    handleClickOutside() { }
+    handleClickOutside () {
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
+    }
   }
 }
 </script>
@@ -43,6 +54,19 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: calc(100% - #{$sideBarWidth});
+  transition: width 0.28s;
+}
+
+.hideSidebar .fixed-header {
+  width: calc(100% - 54px)
 }
 
 </style>

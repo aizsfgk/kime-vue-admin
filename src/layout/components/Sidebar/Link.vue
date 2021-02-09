@@ -1,4 +1,5 @@
 <template>
+<!-- is是动态组件 -->
   <component :is="type" v-bind="linkProps(to)">
     <slot />
   </component>

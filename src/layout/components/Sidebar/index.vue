@@ -1,6 +1,10 @@
 <template>
   <div :class="{'has-logo': showLogo}">
-    <!-- <logo v-if="showLogo" :collapse="isCollapse" /> -->
+    <!-- 1. logo -->
+    <logo v-if="showLogo" :collapse="isCollapse" />
+
+    <!-- 2. sidebar 总体 -->
+    <!-- 这里有个滑动栏 -->
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -21,20 +25,24 @@
 <script>
 import { mapGetters } from 'vuex'
 import SidebarItem from './SidebarItem'
+import Logo from './Logo'
 import variables from '@/styles/variables.scss'
 
 export default {
   components: {
-    SidebarItem
+    SidebarItem,
+    Logo
   },
   computed: {
     ...mapGetters([
       'sidebar'
     ]),
-    routes() {
+    // 获取全部路由
+    routes () {
       return this.$router.options.routes
     },
-    activeMenu() {
+    // 激活的菜单
+    activeMenu () {
       const route = this.$route
       console.log("route: ", route)
       const { meta, path } = route
@@ -43,14 +51,17 @@ export default {
       }
       return path
     },
-    showLogo() {
+    // 是否展示Logo
+    showLogo () {
       return this.$store.state.settings.sidebarLogo
     },
-    isCollapse() { // ???
-      return !this.sidebar.opened
-    },
-    variables() {
+    // 变量
+    variables () {
       return variables
+    },
+    // 是否折叠
+    isCollapse () { // ???
+      return !this.sidebar.opened
     }
   }
 }

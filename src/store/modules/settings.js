@@ -1,9 +1,10 @@
 import defaultSettings from '@/settings'
 
-const { sidebarLogo } = defaultSettings
+const { sidebarLogo, fixedHeader } = defaultSettings
 
 const state = {
-  sidebarLogo: sidebarLogo
+  sidebarLogo: sidebarLogo,
+  fixedHeader: fixedHeader
 }
 
 export default {

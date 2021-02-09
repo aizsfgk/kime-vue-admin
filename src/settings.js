@@ -1,4 +1,5 @@
 module.exports = {
   title: 'Kime Vue Admin',
-  sidebarLogo: false
+  sidebarLogo: true,
+  fixedHeader: false
 }

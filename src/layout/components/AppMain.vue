@@ -1,7 +1,7 @@
 <template>
   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
-      <router-view :key="key" /> <!-- 引入主页面 -->
+    <transition name="fade-transform" mode="in-out"> <!-- ease-in-out|out-in -->
+      <router-view :key="key"/> <!-- 路由的组件将渲染到这里 -->
     </transition>
   </section>
 </template>
@@ -27,5 +27,15 @@ export default {
 }
 .fixed-header+.app-main {
   padding-top: 50px;
+}
+</style>
+
+<style lang="scss">
+// 需要碰到了再看
+// fix css style bug in open el-dialog
+.el-popup-parent--hidden {
+  .fixed-header {
+    padding-right: 15px;
+  }
 }
 </style>
