@@ -1,3 +1,4 @@
+// 清除浮动
 @mixin clearfix {
   &:after {
     content: "";
@@ -6,6 +7,7 @@
   }
 }
 
+// 滚动条
 @mixin scrollBar {
   &::-webkit-scrollbar-track-piece {
     background: red;
@@ -19,6 +21,7 @@
   }
 }
 
+// 相对位置
 @mixin relative {
   position: relative;
   width: 100%;

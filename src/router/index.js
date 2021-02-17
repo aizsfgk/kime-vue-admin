@@ -31,13 +31,13 @@ export const constantRoutes = [
         path: 'table1',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '表格1', icon: 'icon' }
+        meta: { title: '表格1', icon: 'table' }
       },
       {
         path: 'table2',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '表格2', icon: 'icon' }
+        meta: { title: '表格2', icon: 'table' }
       }
     ]
   },

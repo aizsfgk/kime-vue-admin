@@ -27,7 +27,7 @@ export default {
     iconName () {
       return `#icon-${this.iconClass}`
     },
-    sygClass () {
+    svgClass () {
       if (this.className) {
         return 'svg-icon' + this.className
       } else {

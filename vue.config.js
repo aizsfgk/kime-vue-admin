@@ -44,6 +44,23 @@ module.exports = {
     // 处理一些配置逻辑
     // set svg-sprite-loader
     // 先不做，会怎么样???
+    // 不做，svg精灵图标错位
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('src/icons'))
+      .end()
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/icons'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end()
+
   }
 
 }
