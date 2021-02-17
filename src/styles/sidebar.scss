@@ -92,7 +92,8 @@
 
     & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu, .el-menu-item {
-      min-width: $sideBarWidth !important;
+      // min-width: $sideBarWidth !important;
+      // 去除浮动产生的问题
       background-color: $subMenuBg !important;
 
       &:hover {

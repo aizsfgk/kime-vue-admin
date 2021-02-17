@@ -8,6 +8,11 @@ Vue.use(VueRouter)
 // 静态路由
 export const constantRoutes = [
   {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -42,11 +47,11 @@ export const constantRoutes = [
     ]
   },
   {
-    path: 'external-link',
+    path: '/external-link',
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/',
         meta: { title: '外部链接', icon: 'link' }
       }
     ]

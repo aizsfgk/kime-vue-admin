@@ -17,6 +17,9 @@ import router from './router'
 
 import '@/icons'
 
+// 路由钩子
+import '@/permission'
+
 console.log(process.env)
 
 // 使用ElementUI组件库
