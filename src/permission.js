@@ -4,6 +4,7 @@ import { Message } from 'element-ui'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken } from '@/utils/auth' // get token from cookie
+import { getPageTitle } from '@/utils/title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -12,7 +13,7 @@ const whiteList = [ '/login' ]
 router.beforeEach((to, from, next) => {
   NProgress.start()
 
-  document.title = 'test-zsf-title'
+  document.title = getPageTitle()
 
   const hasToken = getToken()
 
