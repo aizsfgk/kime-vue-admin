@@ -13,6 +13,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -55,7 +60,10 @@ export const constantRoutes = [
         meta: { title: '外部链接', icon: 'link' }
       }
     ]
-  }
+  },
+
+  // 如果页面不存在，则跳到404
+  { path: '*', redirect: '/404', hidden: true }
 ]
 // 动态路由
 
@@ -66,5 +74,11 @@ const createRouter = () => new VueRouter({
 })
 
 const router = createRouter()
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher
+}
 
 export default router

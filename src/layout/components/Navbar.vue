@@ -12,7 +12,7 @@
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <span style="display:block;">
-            张三
+            {{ name }}
           </span>
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -44,12 +44,17 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'sidebar'
+      'sidebar',
+      'name'
     ])
   },
   methods: {
     toggleSidebar () {
       this.$store.dispatch('app/toggleSideBar')
+    },
+    logout () {
+      this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }
 }

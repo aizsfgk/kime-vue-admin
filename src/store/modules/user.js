@@ -26,11 +26,16 @@ const actions = {
   // 用户登录
   login({ commit }, userInfo) {
     const { username, password } = userInfo
+    console.log('username: ', username)
+    console.log('password: ', password)
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
+        console.log('response: ', response)
+        console.log('data: ', data)
         commit('SET_TOKEN', data.token) // 设置全局状态
         setToken(data.token)            // 设置cookie
+        
         resolve()
       }).catch(error => {
         reject(error)
@@ -56,7 +61,7 @@ const actions = {
   // 退出
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      logout(state,token).then(()=> {
+      logout(state.token).then(()=> {
         removeToken()
         // resetRouter()
         commit('RESET_STATE')
