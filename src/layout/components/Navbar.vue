@@ -67,7 +67,7 @@ export default {
   height: $topLogoNavHeight;
   overflow: hidden;
   position: relative;
-  background: #F3F3FA;
+  // background: #F3F3FA;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
   transition: width 0.28s;
   

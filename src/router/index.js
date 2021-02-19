@@ -31,23 +31,23 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/example',
+    path: '/form',
     component: Layout,
-    redirect: '/example/table1',
-    name: 'Example',
-    meta: { title: '例子', icon: 'el-icon-s-help' },
+    redirect: '/form/base',
+    name: 'Form',
+    meta: { title: '表单页面', icon: 'form' },
     children: [
       {
-        path: 'table1',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '表格1', icon: 'table' }
+        path: 'base',
+        name: 'Base',
+        component: () => import('@/views/form/base/index'),
+        meta: { title: '基础表单' }
       },
       {
-        path: 'table2',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '表格2', icon: 'table' }
+        path: 'advance',
+        name: 'Advance',
+        component: () => import('@/views/form/advance/index'),
+        meta: { title: '高级表单' }
       }
     ]
   },
@@ -56,7 +56,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/',
+        path: '/',
         meta: { title: '外部链接', icon: 'link' }
       }
     ]

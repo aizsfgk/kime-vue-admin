@@ -7,23 +7,31 @@
     <div class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
+        <!-- 标签页 -->
+        <tags-view v-if="needTagsView" :title="tagsViewTitle"/>
+
+        <app-main class="main"/>
       </div>
-      <app-main />
     </div>
   </div>
 </template>
 
 <script>
-import { AppMain, Sidebar, Navbar } from './components'
+import { mapState } from 'vuex'
+import { AppMain, Sidebar, Navbar, TagsView } from './components'
 
 export default {
   name: 'Layout',
   components: {
     AppMain,
     Sidebar,
-    Navbar
+    Navbar,
+    TagsView
   },
   computed: {
+    ...mapState({ // 使用vuex的方式
+      needTagsView: state => state.settings.tagsView
+    }),
     sidebar () {
       return this.$store.state.app.sidebar
     },
@@ -35,6 +43,9 @@ export default {
     },
     fixedHeader () {
       return this.$store.state.settings.fixedHeader
+    },
+    tagsViewTitle () {
+      return this.$route.meta.title
     }
   },
   methods: {
@@ -54,6 +65,11 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+
+  .main {
+    // background-color: $menuBg;
+    margin: 2px 0 0 2px;
+  }
 }
 
 .fixed-header {
