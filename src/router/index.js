@@ -33,21 +33,48 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
-    redirect: '/form/base',
+    redirect: '/form/form-base',
     name: 'Form',
     meta: { title: '表单页面', icon: 'form' },
     children: [
       {
-        path: 'base',
-        name: 'Base',
+        path: 'form-base',
+        name: 'FormBase',
         component: () => import('@/views/form/base/index'),
         meta: { title: '基础表单' }
       },
       {
-        path: 'advance',
-        name: 'Advance',
+        path: 'form-advance',
+        name: 'FormAdvance',
         component: () => import('@/views/form/advance/index'),
         meta: { title: '高级表单' }
+      }
+    ]
+  },
+  {
+    path: '/list',
+    component: Layout,
+    redirect: '/list/list-base',
+    name: 'List',
+    meta: { title: '列表页面', icon: 'table' },
+    children: [
+      {
+        path: 'list-base',
+        name: 'ListBase',
+        component: () => import('@/views/list/base/index'),
+        meta: { title: '基础列表' }
+      },
+      {
+        path: 'list-advance',
+        name: 'ListAdvance',
+        component: () => import('@/views/list/card/index'),
+        meta: { title: '卡片列表' }
+      },
+      {
+        path: 'list-goods',
+        name: 'ListGoods',
+        component: () => import('@/views/list/goods/index'),
+        meta: { title: '商品列表' }
       }
     ]
   },

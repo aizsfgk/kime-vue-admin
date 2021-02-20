@@ -67,7 +67,8 @@ export default {
   width: 100%;
 
   .main {
-    // background-color: $menuBg;
+    background-color: #F5F7FF;
+    // background-color: #FFF;
     margin: 2px 0 0 2px;
   }
 }

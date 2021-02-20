@@ -25,7 +25,7 @@ export default {
 .tags-view-container {
   margin-top: 3px;
   margin-left: 2px;
-  min-height: 50px;
+  // min-height: 30px;
   width: 100%;
   // background-color: $menuBg;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -34,7 +34,8 @@ export default {
   .title {
     display: inline-block;
     font-size: 20px;
-    margin: 20px;
+    // margin: 20px;
+    padding: 15px;
     font-family: $fontFamily;
     font-weight: bolder;
     color:rgb(33, 43, 83);

@@ -72,7 +72,7 @@ export default {
   transition: width 0.28s;
   
   & .hamburger-container {
-    line-height: 46px;
+    line-height: 60px;
     height: 100%;
     float: left;
     cursor: pointer;
@@ -91,7 +91,7 @@ export default {
   .right-menu {
     float: right;
     height: 100%;
-    line-height: 50px; /// TODO
+    line-height: 60px; /// TODO
 
     &:focus {
       outline: none;
@@ -101,7 +101,7 @@ export default {
     margin-right: 30px;
     .avatar-wrapper {
       height: 100%;
-      line-height: 50px;
+      line-height: 60px;
       padding: 0 15px;
       cursor: pointer;
       position: relative;
