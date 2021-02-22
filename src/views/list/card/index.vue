@@ -14,7 +14,7 @@
           <el-button class="box-btn" type="text">操作按钮</el-button>
         </div>
       </el-card>
-      </el-col>>
+      </el-col>
     </el-row>
   </div>
 </template>
