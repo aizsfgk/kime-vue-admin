@@ -6,8 +6,8 @@
         <h1 v-else class="sidebar-title">{{ title }} </h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
-        <h1 v-else class="sidebar-title">{{ title }} </h1>
+        <img :src="logo" class="sidebar-logo">
+        <h1 class="sidebar-title">{{ title }} </h1>
       </router-link>
     </transition>
   </div>
@@ -24,8 +24,8 @@ export default {
   },
   data () {
     return {
-      title: 'KVA',
-      logo: ''
+      title: 'KVA管理系统',
+      logo: 'kva.png'
     }
   }
 }
@@ -48,9 +48,10 @@ export default {
   width: 100%;
   height: 60px; // 这里的高度很重要
   line-height: 60px;
-  background: #2d8cf0!important;
+  background: #191a23!important;
   text-align: center;
   overflow: hidden;
+  color: #fff;
 
   & .sidebar-logo-link {
     height: 100%;
