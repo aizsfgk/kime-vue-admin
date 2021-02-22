@@ -1,7 +1,7 @@
 <template>
   <div class="goods-container">
     <el-row>
-      <el-col  :xs="24" :sm="12" :lg="8" :xl="6"  v-for="o in 5" :key="o" >
+      <el-col  :xs="24" :sm="12" :lg="8" :xl="6"  v-for="o in 15" :key="o" >
         <el-card  class="box-card" shadow="hover">
           <div class="img-container">
             <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
@@ -39,11 +39,18 @@ export default {
 
 <style lang="scss" scoped>
 .goods-container {
+  display: flex;
+  flex-wrap:wrap;
+  margin:20px;
+
   .box-card {
-    width: 30%;
-    min-width: 320px;
-    margin: 20px;
+    // width: 30%;
+    // min-width: 320px;
     text-align: center;
+    margin: 0 10px 10px 0;
+    // &:last-of-type {
+    //   border: 1px solid red;
+    // }
 
     .img-container {
       min-width: 200px;

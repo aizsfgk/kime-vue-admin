@@ -57,7 +57,15 @@ div:focus {
   }
 }
   
-// main-container global css
-.app-container {
-  padding: 20px;
+// element-ui生成的类；控制滑动条
+// 
+.app-main {
+  overflow-y: auto !important;
+  height: 3em;
+  background-color: #F5F7FF;
+  margin: 2px 0 0 2px;
+  // padding-top: 50px;
+  padding-bottom: 100px;
+  
+  // @include scrollBar;
 }

@@ -10,7 +10,7 @@
         <!-- 标签页 -->
         <tags-view v-if="needTagsView" :title="tagsViewTitle"/>
 
-        <app-main class="main"/>
+        <app-main />
       </div>
     </div>
   </div>
@@ -65,12 +65,6 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
-
-  .main {
-    background-color: #F5F7FF;
-    // background-color: #FFF;
-    margin: 2px 0 0 2px;
-  }
 }
 
 .fixed-header {
