@@ -2,7 +2,7 @@
   <div class="http404-container">
     <h3 class=title>404</h3>
     <p class="content">
-      this page is not found!
+      NOT FOUND - 服务器找不到请求的网页！
     </p>
     <el-button class="back-home">
       <a href="/">back to Home</a>

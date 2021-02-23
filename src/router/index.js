@@ -20,13 +20,46 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/console',
+    meta: { title: '仪表盘', icon: 'dashboard' },
     children: [
       {
-        path: 'dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index'),
-        meta: { title: '仪表盘', icon: 'dashboard' }
+        path: 'console',
+        name: 'Console',
+        component: () => import('@/views/dashboard/console/index'),
+        meta: { title: '主控台' }
+      },
+      {
+        path: 'monitor',
+        name: 'Monitor',
+        component: () => import('@/views/dashboard/monitor/index'),
+        meta: { title: '监控项' }
+      }
+    ]
+  },
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system/user',
+    meta: { title: '系统管理', icon: 'user' },
+    children: [
+      {
+        path: 'user',
+        name: 'User',
+        component: () => import('@/views/system/user/index'),
+        meta: { title: '用户管理' }
+      },
+      {
+        path: 'role',
+        name: 'Role',
+        component: () => import('@/views/system/role/index'),
+        meta: { title: '角色管理' }
+      },
+      {
+        path: 'permission',
+        name: 'Permission',
+        component: () => import('@/views/system/permission/index'),
+        meta: { title: '权限管理' }
       }
     ]
   },
@@ -79,6 +112,40 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/detail',
+    component: Layout,
+    redirect: '/detail/base',
+    name: 'Detail',
+    meta: { title: '详情页面', icon: 'example' },
+    children: [
+      {
+        path: 'detail-base',
+        name: 'DetailBase',
+        component: () => import('@/views/detail/base/index'),
+        meta: { title: '基础详情' }
+      }
+    ]
+  },
+  {
+    path: '/exception',
+    component: Layout,
+    meta: { title: '异常页面', icon: 'nested' },
+    children: [
+      {
+        path: 'Page-404',
+        name: 'Page404',
+        component: () => import('@/views/404'),
+        meta: { title: '404页面' }
+      },
+      {
+        path: 'Page-403',
+        name: 'Page403',
+        component: () => import('@/views/403'),
+        meta: { title: '403页面' }
+      }
+    ]
+  },
+  {
     path: '/external-link',
     component: Layout,
     children: [
@@ -103,7 +170,7 @@ const createRouter = () => new VueRouter({
 const router = createRouter()
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter() {
+export function resetRouter () {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher
 }
