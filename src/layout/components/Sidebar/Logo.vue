@@ -56,12 +56,13 @@ export default {
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;
+    text-align: center;
 
     & .sidebar-logo {
       width: 32px;
       height: 32px;
+      margin: 0 auto;
       vertical-align: middle;
-      margin-right: 12px;
     }
 
     & .sidebar-title {
@@ -73,12 +74,6 @@ export default {
       font-size: 14px;
       font-family: $fontFamily;
       vertical-align: middle;
-    }
-  }
-
-  & .collapse {
-    .sidebar-logo {
-      margin-left: 0px;
     }
   }
 }
